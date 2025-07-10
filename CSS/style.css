@@ -1,0 +1,570 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.typewriter-cursor::after {
+  content: "|";
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+body {
+  background-color: whitesmoke;
+}
+
+.contenido {
+  flex: 1;
+  padding: 16px 16px;
+}
+
+/*CSS DEL HEADER*/
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: white;
+  padding: 8px 12px;
+}
+
+.nav-link:hover {
+  color: black;
+  background: #fff;
+  transform: scale(1.05);
+  border-radius: 20px;
+}
+
+/*CSS DE LA SESIÓN HOME*/
+
+.Container-principal {
+  display: flex;
+  height: 100vh;
+  flex-wrap: wrap;
+}
+
+/* Parte izquierda: fondo negro, texto blanco */
+
+.Container-izquierda {
+  background-color: #000;
+  color: #fff;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px;
+}
+
+.Container-izquierda h1 {
+  font-size: 30px;
+  margin-bottom: 20px;
+  font-weight: 300;
+  font-family: "Press Start 2P", sans-serif;
+}
+
+.Container-izquierda h2 {
+  font-size: 2rem;
+  font-weight: 300;
+  font-family: "Press Start 2P", sans-serif;
+}
+
+/* Parte derecha: fondo blanco con imagen */
+.Container-Derecha {
+  background-color: #ffffff;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+.foto-perfil {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10%;
+  box-shadow: 0 0px 30px rgba(0, 0, 0, 1);
+}
+
+.Boton-descargar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 30px;
+  font-family: "Press Start 2P", sans-serif;
+}
+
+.btn-descargar {
+  display: inline-block;
+  padding: 14px 30px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+  font-family: "Press Start 2P", sans-serif;
+}
+
+.btn-descargar:hover {
+  background-color: white;
+  color: black;
+  transform: scale(1.05);
+  font-family: "Press Start 2P", sans-serif;
+}
+
+/*CSS DEL SOBRE MÍ*/
+
+.Sobre-mi {
+  padding: 1rem;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 -3px 5px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  margin-bottom: 3rem;
+}
+
+.Sobre-mi.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.Sobre-mi h2 {
+  font-weight: 300;
+  font-family: "Press Start 2P", sans-serif;
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.Sobre-mi h2::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background-color: black;
+}
+
+.Sobre-mi-text p {
+  margin-bottom: 1rem;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #111;
+}
+
+/*CSS DEL EXPERIENCIA*/
+
+.Container-principal-experiencia {
+  padding: 1rem;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 -3px 5px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  margin-bottom: 3rem;
+}
+
+.Container-principal-experiencia.visible{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.Container-principal-experiencia h2 {
+  font-weight: 300;
+  font-family: "Press Start 2P", sans-serif;
+  margin-bottom: 1rem;
+  position: relative; /* Necesario para que ::after se posicione relativo al h2 */
+  display: inline-block; /* Opcional: hace que el subrayado no ocupe todo el ancho */
+}
+
+.Container-principal-experiencia h2::after {
+  content: "";
+  position: absolute;
+  bottom: -5px; /* Posición justo debajo del texto */
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background-color: black;
+}
+
+.Container-principal-experiencia p {
+  margin-bottom: 1rem;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  line-height: 1;
+  color: #111;
+}
+
+.Lazodetiempo {
+  position: relative;
+  margin-bottom: 2rem;
+  padding: 16px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.Lazodetiempo::before {
+  content: "";
+  position: absolute;
+  left: 7px;
+  top: 0;
+  height: 100%;
+  width: 2px;
+  background-color: black;
+}
+
+.Lazodetiempo-item {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.Lazodetiempo-item::before {
+  content: "";
+  position: absolute;
+  left: -16px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: black;
+  border: 2px solid white;
+}
+
+.Lazodetiempo-fecha {
+  font-size: 1rem;
+  color: black;
+  margin-bottom: 0.5rem;
+  font-family: "Inter", sans-serif;
+  line-height: 1;
+  color: #111;
+}
+
+.Lazodetiempo-titulo {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.Lazodetiempo-empresa {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: black;
+}
+
+.Lazodetiempo-descripcion {
+  font-size: 0.95rem;
+}
+
+/*CSS PARA PROYECTOS*/
+
+.Container-principal-proyectos {
+  padding: 1rem;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 -3px 5px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  margin-bottom: 3rem;
+}
+
+.Container-principal-proyectos.visible{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.Container-principal-proyectos h2 {
+  font-weight: 300;
+  font-family: "Press Start 2P", sans-serif;
+  margin-bottom: 1.5rem;
+  position: relative; /* Necesario para que ::after se posicione relativo al h2 */
+  display: inline-block; /* Opcional: hace que el subrayado no ocupe todo el ancho */
+}
+
+.Container-principal-proyectos h2::after {
+  content: "";
+  position: absolute;
+  bottom: -5px; /* Posición justo debajo del texto */
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background-color: black;
+}
+
+.Grid-proyecto {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.Tarjeta-proyectos {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 -3px 5px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.Tarjeta-proyectos:hover {
+  transform: translateY(-1px);
+}
+
+.Proyecto-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.informacion-proyecto {
+  padding: 1.2rem;
+}
+
+.Titulo-proyecto {
+  font-weight: 300;
+  font-family: "Press Start 2P", sans-serif;
+  margin-bottom: 10px;
+}
+
+.Link-proyecto {
+  display: flex;
+  margin-top: 1rem;
+}
+
+.Link-proyecto a {
+  margin-right: 1rem;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.Link-proyecto i {
+  margin-right: 0.3rem;
+}
+
+/*CSS PARA HABILIDADES*/
+.Container-principal-habilidades {
+  padding: 1rem;
+  padding-bottom: 40px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 -3px 5px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  margin-bottom: 3rem;
+}
+
+.Container-principal-habilidades.visible{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.Container-principal-habilidades h2 {
+  font-weight: 300;
+  font-family: "Press Start 2P", sans-serif;
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+}
+
+.Container-principal-habilidades h2::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background-color: black;
+}
+
+.icono-tecnologia {
+  font-size: 70px;
+  color: black;
+  margin: 10px;
+}
+
+/*CSS PARA CONTACTOS*/
+.Container-principal-contacto {
+  padding: 1rem;
+  padding-bottom: 40px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 -3px 5px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  margin-bottom: 3rem;
+}
+
+.Container-principal-contacto.visible{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.Container-principal-proyectos.visible{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.Container-principal-contacto h2 {
+  font-weight: 300;
+  font-family: "Press Start 2P", sans-serif;
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+}
+
+.Container-principal-contacto h2::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background-color: black;
+}
+
+.Contacto-texto {
+  margin-bottom: 1rem;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #111;
+}
+
+/*CSS PARA EL FOOTER*/
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem 0;
+  color: white;
+  background-color: black;
+  margin-top: 2rem;
+}
+
+footer p{
+  font-weight: 300;
+  font-family: "Press Start 2P", sans-serif;
+  font-size: smaller;
+}
+
+/*CSS PARA QUE SEA RESPONSIVO*/
+
+/* Tablets y pantallas medianas */
+@media (max-width: 1024px) {
+  .Container-principal {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .Container-izquierda, .Container-Derecha {
+    padding: 30px;
+    flex: 1 1 100%;
+  }
+
+  .Container-izquierda h1,
+  .Container-izquierda h2 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .foto-perfil {
+    max-width: 300px;
+    border-radius: 10%;
+  }
+
+  .Grid-proyecto {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .icono-tecnologia {
+    font-size: 50px;
+  }
+}
+
+/* Teléfonos */
+@media (max-width: 600px) {
+  .Container-principal {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .Container-izquierda, .Container-Derecha {
+    padding: 20px;
+  }
+
+  .Container-izquierda h1,
+  .Container-izquierda h2 {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .btn-descargar {
+    font-size: 0.8rem;
+    padding: 14px 190px;
+
+  }
+
+  .foto-perfil {
+    max-width: 250px;
+  }
+
+  .Grid-proyecto {
+    grid-template-columns: 1fr;
+  }
+
+  .icono-tecnologia {
+    font-size: 40px;
+  }
+
+  footer p {
+    font-size: 0.5rem;
+  }
+
+  /* Header no fijo en móvil */
+  header {
+    position: static;
+    flex-direction: column;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+  }
+}
