@@ -583,6 +583,55 @@ footer p {
   }
 }
 
+@media (max-width: 599px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  header {
+    width: 100vw;
+    box-sizing: border-box;
+  }
+
+  .Container-izquierda,
+  .Container-Derecha {
+    width: 100%;
+    padding: 16px;
+    text-align: center;
+  }
+
+  .Container-izquierda h1,
+  .Container-izquierda h2 {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .btn-descargar {
+    font-size: 0.7rem;
+    padding: 12px 40px;
+    width: 100%;
+  }
+
+  .foto-perfil {
+    max-width: 200px;
+    width: 100%;
+  }
+
+  .Grid-proyecto {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .icono-tecnologia {
+    font-size: 30px;
+  }
+
+  footer p {
+    font-size: 0.45rem;
+    padding: 0 10px;
+  }
+}
+
 /* Teléfonos muy pequeños */
 @media (max-width: 360px) {
   body {
