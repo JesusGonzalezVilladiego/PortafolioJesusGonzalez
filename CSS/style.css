@@ -11,8 +11,13 @@
 }
 
 @keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
 }
 
 body {
@@ -41,6 +46,7 @@ header {
 nav {
   display: flex;
   gap: 20px;
+  flex-wrap: wrap;
 }
 
 .nav-link {
@@ -194,7 +200,7 @@ nav {
   margin-bottom: 3rem;
 }
 
-.Container-principal-experiencia.visible{
+.Container-principal-experiencia.visible {
   opacity: 1;
   transform: translateY(0);
 }
@@ -296,7 +302,7 @@ nav {
   margin-bottom: 3rem;
 }
 
-.Container-principal-proyectos.visible{
+.Container-principal-proyectos.visible {
   opacity: 1;
   transform: translateY(0);
 }
@@ -383,7 +389,7 @@ nav {
   margin-bottom: 3rem;
 }
 
-.Container-principal-habilidades.visible{
+.Container-principal-habilidades.visible {
   opacity: 1;
   transform: translateY(0);
 }
@@ -425,12 +431,12 @@ nav {
   margin-bottom: 3rem;
 }
 
-.Container-principal-contacto.visible{
+.Container-principal-contacto.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-.Container-principal-proyectos.visible{
+.Container-principal-proyectos.visible {
   opacity: 1;
   transform: translateY(0);
 }
@@ -476,7 +482,7 @@ footer {
   margin-top: 2rem;
 }
 
-footer p{
+footer p {
   font-weight: 300;
   font-family: "Press Start 2P", sans-serif;
   font-size: smaller;
@@ -491,7 +497,8 @@ footer p{
     height: auto;
   }
 
-  .Container-izquierda, .Container-Derecha {
+  .Container-izquierda,
+  .Container-Derecha {
     padding: 30px;
     flex: 1 1 100%;
   }
@@ -518,25 +525,45 @@ footer p{
 
 /* Teléfonos */
 @media (max-width: 600px) {
+  body {
+    overflow-x: hidden;
+  }
+
   .Container-principal {
     flex-direction: column;
     height: auto;
   }
 
-  .Container-izquierda, .Container-Derecha {
+  .Container-izquierda,
+  .Container-Derecha {
     padding: 20px;
+    width: 100%;
   }
 
-  .Container-izquierda h1,
-  .Container-izquierda h2 {
-    font-size: 1rem;
-    text-align: center;
+  header {
+    position: static;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    width: 100vw;
+    box-sizing: border-box;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .nav-link {
+    padding: 6px 10px;
+    font-size: 0.9rem;
   }
 
   .btn-descargar {
     font-size: 0.8rem;
     padding: 14px 190px;
-
   }
 
   .foto-perfil {
@@ -554,17 +581,8 @@ footer p{
   footer p {
     font-size: 0.5rem;
   }
-
-  /* Header no fijo en móvil */
-  header {
-    position: static;
-    flex-direction: column;
-  }
-
-  nav {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    margin-top: 10px;
-  }
 }
+
+
+
+
