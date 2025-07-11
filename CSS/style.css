@@ -583,6 +583,39 @@ footer p {
   }
 }
 
+@media (max-width: 430px) {
+  body {
+    overflow-x: hidden;
+  }
 
+  header {
+    position: static;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    width: 100vw;
+    box-sizing: border-box;
+  }
 
+  nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+  }
 
+  .nav-link {
+    font-size: 0.8rem;
+    padding: 6px 8px;
+  }
+
+  .Container-principal {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .Container-izquierda,
+  .Container-Derecha {
+    width: 100%;
+  }
+}
