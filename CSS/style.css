@@ -43,6 +43,11 @@ header {
   padding: 15px;
 }
 
+.sidebar-nav {
+  display: flex;
+  gap: 20px;
+}
+
 nav {
   display: flex;
   gap: 20px;
@@ -490,8 +495,11 @@ footer p {
 
 /*CSS PARA QUE SEA RESPONSIVO*/
 
-/* Tablets y pantallas medianas */
+/*Tablets y pantallas medianas*/
 @media (max-width: 1024px) {
+  body {
+    overflow-x: hidden;
+  }
   .Container-principal {
     flex-direction: column;
     height: auto;
@@ -509,6 +517,10 @@ footer p {
     text-align: center;
   }
 
+  .Container-izquierda h1 {
+    margin-top: 60px;
+  }
+
   .foto-perfil {
     max-width: 300px;
     border-radius: 10%;
@@ -521,76 +533,17 @@ footer p {
   .icono-tecnologia {
     font-size: 50px;
   }
-}
-
-/* Teléfonos */
-@media (max-width: 600px) {
-  body {
-    overflow-x: hidden;
-  }
-
-  .Container-principal {
-    flex-direction: column;
-    height: auto;
-  }
-
-  .Container-izquierda,
-  .Container-Derecha {
-    padding: 20px;
-    width: 100%;
-  }
-
-  header {
-    position: static;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
-    width: 100vw;
-    box-sizing: border-box;
-  }
-
-  nav {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    margin-top: 10px;
-  }
-
-  .nav-link {
-    padding: 6px 10px;
-    font-size: 0.9rem;
-  }
 
   .btn-descargar {
-    font-size: 0.8rem;
-    padding: 14px 190px;
-  }
-
-  .foto-perfil {
-    max-width: 250px;
-  }
-
-  .Grid-proyecto {
-    grid-template-columns: 1fr;
-  }
-
-  .icono-tecnologia {
-    font-size: 40px;
-  }
-
-  footer p {
-    font-size: 0.5rem;
+    font-size: 0.7rem;
+    padding: 12px 40px;
+    width: 100%;
   }
 }
 
-@media (max-width: 599px) {
+@media (max-width: 726px) {
   body {
     overflow-x: hidden;
-  }
-
-  header {
-    width: 100vw;
-    box-sizing: border-box;
   }
 
   .Container-izquierda,
@@ -629,6 +582,187 @@ footer p {
   footer p {
     font-size: 0.45rem;
     padding: 0 10px;
+  }
+
+  .menu-toggle {
+    display: block;
+    font-size: 2rem;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 2001;
+  }
+
+  .sidebar-nav {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 200px;
+    height: 100vh; /* <-- Asegura que ocupe toda la altura de la pantalla */
+    background-color: black;
+    padding: 2rem 1rem;
+    flex-direction: column;
+    gap: 1.5rem;
+    transition: left 0.3s ease;
+    z-index: 2000;
+    margin: 0;
+    justify-content: center;
+  }
+
+  .sidebar-nav.show {
+    left: 0;
+    justify-content: center;
+  }
+
+  .nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+  }
+
+  .nav-link:hover {
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    padding: 4px 8px;
+  }
+
+  /* Ocultar navegación horizontal */
+  header nav {
+    display: none;
+  }
+
+  /* Mostrar ícono solo en móviles */
+  .menu-toggle {
+    display: block;
+  }
+
+  /* Mostrar nav cuando está activado */
+  header .sidebar-nav.show {
+    display: flex;
+  }
+
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    padding: 10px;
+    width: 100%;
+  }
+}
+
+/* Teléfonos */
+@media (max-width: 600px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .Container-izquierda,
+  .Container-Derecha {
+    width: 100%;
+    padding: 16px;
+    text-align: center;
+  }
+
+  .Container-izquierda h1,
+  .Container-izquierda h2 {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .btn-descargar {
+    font-size: 0.7rem;
+    padding: 12px 40px;
+    width: 100%;
+  }
+
+  .foto-perfil {
+    max-width: 200px;
+    width: 100%;
+  }
+
+  .Grid-proyecto {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .icono-tecnologia {
+    font-size: 30px;
+  }
+
+  footer p {
+    font-size: 0.45rem;
+    padding: 0 10px;
+  }
+
+  .menu-toggle {
+    display: block;
+    font-size: 2rem;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 2001;
+  }
+
+  .sidebar-nav {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 200px;
+    height: 100vh; /* <-- Asegura que ocupe toda la altura de la pantalla */
+    background-color: black;
+    padding: 2rem 1rem;
+    flex-direction: column;
+    gap: 1.5rem;
+    transition: left 0.3s ease;
+    z-index: 2000;
+    margin: 0;
+    justify-content: center;
+  }
+
+  .sidebar-nav.show {
+    left: 0;
+    justify-content: center;
+  }
+
+  .nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+  }
+
+  .nav-link:hover {
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    padding: 4px 8px;
+  }
+
+  /* Ocultar navegación horizontal */
+  header nav {
+    display: none;
+  }
+
+  /* Mostrar ícono solo en móviles */
+  .menu-toggle {
+    display: block;
+  }
+
+  /* Mostrar nav cuando está activado */
+  header .sidebar-nav.show {
+    display: flex;
+  }
+
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    padding: 10px;
+    width: 100%;
   }
 }
 
@@ -681,5 +815,3 @@ footer p {
     padding: 0 10px;
   }
 }
-
-
