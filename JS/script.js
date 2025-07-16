@@ -1,3 +1,4 @@
+//Función para la animacion de escritura
 const textoTitulo = "Jesús González";
 const textoSubtitulo = "Desarrollador de Software";
 
@@ -60,6 +61,7 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   });
 });
 
+//Sidebar
 const menuToggle = document.querySelector(".menu-toggle");
 const sidebarNav = document.querySelector(".sidebar-nav");
 
